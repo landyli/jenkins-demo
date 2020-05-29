@@ -49,7 +49,7 @@ pipeline{
         stage('Deploy to Kubernetes') {
           steps {
             container('kubectl') {
-	      sh "kubectl get pods"
+	      sh "kubectl apply -f /home/jenkins/workspace/demo-pipeline/deployment.yaml"
             }
           }
         }
