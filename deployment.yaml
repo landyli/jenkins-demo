@@ -15,10 +15,12 @@ spec:
     spec:
       containers:
       - name: jenkins-java-demo
-        image: registry.cn-hangzhou.aliyuncs.com/2dfire/springboot-helloworld:0.0.1 
+        image: ${ORIGIN_REPO}/${REPO}:${IMAGE_TAG} 
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: jenkins-docker-cfg
 
 ---
 apiVersion: v1
