@@ -29,7 +29,7 @@ pipeline{
           steps{
               container("maven") {
 	          configFileProvider([configFile(fileId: "75884c5a-4ec2-4dc0-8d87-58b6b1636f8a", targetLocation: "settings.xml")]){
-                    sh "mvn clean install -Dmaven.test.skip=true --settings settings.xml"
+                    sh "mvn package -B -DskipTests"
                   }
               }
           }
