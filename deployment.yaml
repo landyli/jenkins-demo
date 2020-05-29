@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-java-demo
@@ -15,12 +15,10 @@ spec:
     spec:
       containers:
       - name: jenkins-java-demo
-        image: ${ORIGIN_REPO}/${REPO}:${IMAGE_TAG}
+        image: registry.cn-hangzhou.aliyuncs.com/2dfire/springboot-helloworld:0.0.1 
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: jenkins-docker-cfg
 
 ---
 apiVersion: v1
