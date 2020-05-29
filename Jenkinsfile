@@ -28,7 +28,7 @@ pipeline{
         stage('Package'){
           steps{
               container("maven") {
-	          configFileProvider([configFile(fileId: "75884c5a-4ec2-4dc0-8d87-58b6b1636f8a", targetLocation: "settings.xml")]){
+	          configFileProvider([configFile(fileId: "ecba2b3a-c833-4711-b310-53df2527e025", targetLocation: "settings.xml")]){
                     sh "mvn package -B -DskipTests"
                   }
               }
