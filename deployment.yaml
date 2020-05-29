@@ -4,7 +4,7 @@ metadata:
   name: jenkins-java-demo
   namespace: ci
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: jenkins-java-demo
